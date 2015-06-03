@@ -57,5 +57,5 @@ This is a performance test for JavaScript Error.
 On master branch.
 
 ```
-make publish
+$ make publish
 ```
