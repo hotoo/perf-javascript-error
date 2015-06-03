@@ -49,3 +49,5 @@ This is a performance test for JavaScript Error.
 这是粗略的分析结果，如果你得出了不同的结论，请 [提交你的反馈](https://github.com/hotoo/perf-javascript-error/issues) ：）
 
 同时欢迎提供移动设备的数据。
+
+![QR code for preview page url](./qrcode-preview.png)
