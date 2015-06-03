@@ -51,3 +51,11 @@ This is a performance test for JavaScript Error.
 同时欢迎提供移动设备的数据。
 
 ![QR code for preview page url](./qrcode-preview.png)
+
+## Develop
+
+On master branch.
+
+```
+make publish
+```
