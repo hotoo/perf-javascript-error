@@ -12,10 +12,10 @@ test:
 
 build:
 	@npm run build
-	cp index.html $(DIST)/
-	cp ./qrcode-preview.png $(DIST)/
-	cp $(DIST)/$(name)/$(version)/index.js $(DIST)/
-	rm -rf $(DIST)/$(name)
+	@cp index.html $(DIST)
+	@cp ./qrcode-preview.png $(DIST)
+	@cp $(DIST)/$(name)/$(version)/index.js $(DIST)
+	@rm -rf $(DIST)/$(name)
 
 publish: build
-	@gh-import $(DIST)
+	@ghp-import $(DIST)
