@@ -1,0 +1,36 @@
+{
+  "name": "perf-javascript-error",
+  "version": "1.0.0",
+  "description": "Performance test for JavaScript Error.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "spm-webpack-server",
+    "build": "spm-webpack",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hotoo/perf-javascript-error.git"
+  },
+  "keywords": [
+    "Performance",
+    "Test",
+    "Error",
+    "JavaScript"
+  ],
+  "author": "闲耘 <hotoo.cn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hotoo/perf-javascript-error/issues"
+  },
+  "homepage": "https://github.com/hotoo/perf-javascript-error",
+  "spm": {
+    "dependencies": {
+      "detector": "~2.2.2"
+    }
+  },
+  "devDependencies": {
+    "spm-webpack": "^0.3.12",
+    "spm-webpack-server": "^0.3.4"
+  }
+}

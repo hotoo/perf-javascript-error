@@ -1,3 +1,6 @@
+
+var detector = require('detector');
+
 (function CATCH_CONSOLE(){
   if (typeof window === "undefined") { return; }
   var win = window;
@@ -43,6 +46,14 @@
 
 var times = 10000;
 
+if (detector.os) {
+  console.log('* OS:', detector.os.name + '/' + detector.os.fullVersion);
+  console.log('* Browser:', detector.browser.name + '/' + detector.browser.fullVersion);
+  console.log('* Engine:', detector.engine.name + '/' + detector.engine.fullVersion);
+  console.log();
+} else {
+  console.log('Nodejs / iojs');
+}
 
 
 var desc_new_string = "new String() " + times + " times";

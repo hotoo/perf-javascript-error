@@ -9,11 +9,18 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <title>Error-perf</title>
+<style>
+pre {
+  margin: 5px 10px 5px 5px;
+  padding: 5px 5px 5px 10px;
+  border-left: 2px solid #ccc;
+}
+</style>
 </head>
 <body>
 
 Console:
-<div id="console-log"></div>
+<pre id="console-log"></pre>
 
 <ul>
   <li id="link-to-native-console"><a href="?stdout=console">Output to <strong>Native</strong> Console</a></li>
@@ -21,7 +28,9 @@ Console:
 </ul>
 
 <hr size="1" />
-<a href="https://github.com/hotoo/perf-javascript-error">Fork me on GitHub</a>
+<p>
+  <a href="https://github.com/hotoo/perf-javascript-error">Fork me on GitHub</a>
+</p>
 
 <img src="./qrcode-preview.png" alt="QR code for preview page url." />
 
@@ -36,6 +45,6 @@ function get(id){
 get('link-to-native-console').style.display = __cache_console__ ? 'block' : 'none';
 get('link-to-mock-console').style.display = __cache_console__ ? 'none' : 'block';
 </script>
-<script src="./error-perf.js"></script>
+<script src="./index.js"></script>
 </body>
 </html>
