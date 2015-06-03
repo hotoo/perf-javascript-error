@@ -19,3 +19,4 @@ build:
 
 publish: build
 	@ghp-import $(DIST)
+	@git push origin gh-pages
