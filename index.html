@@ -11,8 +11,25 @@
 <title>Error-perf</title>
 </head>
 <body>
+
+Console:
+<div id="console-log"></div>
+
+<ul>
+  <li id="link-to-native-console"><a href="?stdout=console">Output to <strong>Native</strong> Console</a></li>
+  <li id="link-to-mock-console"><a href="?">Output to Mock Console</a></li>
+</ul>
+
 <script>
 var __isBrowser__ = true;
+var __cache_console__ = location.search.indexOf('stdout=console') === -1;
+
+function get(id){
+  return document.getElementById(id);
+}
+
+get('link-to-native-console').style.display = __cache_console__ ? 'block' : 'none';
+get('link-to-mock-console').style.display = __cache_console__ ? 'none' : 'block';
 </script>
 <script src="./error-perf.js"></script>
 </body>

@@ -1,22 +1,44 @@
-if (typeof window !== "undefined") {
-  if (!window.console) {
-    window.console = {
-      log: function(){}
-    };
+(function CATCH_CONSOLE(){
+  if (typeof window === "undefined") { return; }
+  var win = window;
+
+  function now() {
+    return Date.now ? Date.now() : (new Date()).getTime();
   }
+
   var __TIMER__ = {};
-  //  for totoro test.
-  if (!window.__isBrowser__ || !console.time) {
-    console.time = function(name) {
-      __TIMER__[name] = (new Date()).getTime();
+  var doc = document;
+  var consoleBox = doc.getElementById('console-log');
+
+  var MockConsole = {
+    log: function(){
+      if (win.console) {
+        win.console.log.apply(win, arguments);
+      }
+    },
+    time: function(name) {
+      __TIMER__[name] = now();
+    },
+    timeEnd: function(name) {
+      MockConsole.log('| ' + name + ' | ' + (now() - __TIMER__[name]) + 'ms |');
+    }
+  };
+
+  if (win.__isBrowser__ && win.__cache_console__){
+    MockConsole.log = function() {
+      consoleBox.appendChild(doc.createTextNode(Array.prototype.join.call(arguments, ' ')));
+      consoleBox.appendChild(doc.createElement('br'));
     };
   }
-  if (!window.__isBrowser__ || !console.timeEnd) {
-    console.timeEnd = function(name) {
-      console.log(name + ': ' + ((new Date()).getTime() - __TIMER__[name]) + 'ms');
-    };
+
+  // totoro test, without index.html
+  if (!win.console ||
+      !win.__isBrowser__ ||
+      win.__cache_console__
+      ) {
+    win.console = MockConsole;
   }
-}
+})();
 
 
 var times = 10000;
@@ -115,7 +137,7 @@ console.timeEnd(desc_catch_native_string);
 
 
 var error = new String('Error');
-var desc_throw_1_string = "throw 1 String 1 time";
+var desc_throw_1_string = "throw 1 String 1 times";
 try {
   try {
     console.time(desc_throw_1_string);
@@ -126,7 +148,7 @@ try {
 } catch (ex){}
 
 var error = new Error('Error');
-var desc_throw_1_error = "throw 1 error 1 time";
+var desc_throw_1_error = "throw 1 error 1 times";
 try {
   try {
     console.time(desc_throw_1_error);
