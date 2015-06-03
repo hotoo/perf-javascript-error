@@ -46,7 +46,7 @@ This is a performance test for JavaScript Error.
 * Chrome: `new Error()` 和 `throw`/`catch` 各自消耗差不多的时间。
 * IE: `new Error()` 花费了很多的时间，但是 `throw`/`catch` 花费了更多时间，最高近 10 被于 `new Error()`。
 
-这是粗略的分析结果，如果你得出了不同的结论，请 [提交你的反馈](https://github.com/hotoo/perf-javascript-error/issues) ：）
+这是粗略的分析结果，如果你有更好的结论，请 [提交你的反馈](https://github.com/hotoo/perf-javascript-error/issues) ：）
 
 同时欢迎提供移动设备的数据。
 
