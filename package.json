@@ -30,6 +30,8 @@
     }
   },
   "devDependencies": {
+    "benchmark": "~1.0.0",
+    "beautify-benchmark": "^0.2.4",
     "spm-webpack": "^0.3.12",
     "spm-webpack-server": "^0.3.4"
   }
